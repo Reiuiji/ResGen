@@ -1,0 +1,18 @@
+Resistor Color Hex Codes
+0:#000000   Black
+1:#a52a2a   Brown
+2:#ff0000   Red
+3:#ffa500   Orange
+4:#ffff00   Yellow
+5:#008000   Green
+6:#0000ff   Blue
+7:#ee82ee   Violet
+8:#808080   Gray
+9:#ffffff   White
+
+Tolerance:
+Brown:  #a52a2a     Brown
+Red:    #ff0000     Red
+Gold:   #ffd700     Gold
+Silver: #c0c0c0     Silver
+
