@@ -1,9 +1,11 @@
 #!/bin/python
 #Outputs svg image with the correct color codes
 import re
+import os
 
 SVGFILE="4-Band_Resistor.svg"
 RESFILE="resvalues.txt"
+SVGDIR="svg"
 
 COLORS={
 		0:"BLACK",
@@ -86,11 +88,18 @@ def colorgen(value):
         lines[pos] = re.sub(r'444444', COLORCODES[band[3]], lines[pos])
         lines[pos] = re.sub(r'@', str(value), lines[pos])
 
-    with open("svg/" + str(value) + ".svg", "w") as f:
+    with open(SVGDIR + "/" + str(value) + ".svg", "w") as f:
         for line in lines:
             f.write(line)
 
+def setup():
+    if not os.path.exists(SVGDIR):
+        print("Create Dir: " + os.getcwd() + "/" + SVGDIR)
+        os.mkdir(SVGDIR)
+
+
 def main():
+    setup()
     with open(RESFILE, "r") as f:
         lines = f.readlines()
     f.close()
