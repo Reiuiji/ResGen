@@ -17,7 +17,8 @@ COLORS={
         6:"BLUE",
         7:"VIOLET",
         8:"GREY",
-        9:"WHITE"
+        9:"WHITE",
+        10:"GOLD"
 		}
 
 COLORCODES={
@@ -51,14 +52,17 @@ def colordecode(value):
     #val = re.split('(\d*)',value) #break apart any k or M "15K"
     multiplier = 0
     tolerance = "5%"
-    print("Reading Value: " + str(value) + " | len:" + str(len(value)))
     if len(value) == 2:# ## two digit
         band1 = int(value[0])
         band2 = int(value[1])
     elif len(value) == 3:
         band1 = int(value[0])
-        band2 = int(value[1])
-        multiplier = mdecode(value[2])
+        if value[1] == ".":
+            band2 = int(value[2])
+            multiplier = 10
+        else:
+            band2 = int(value[1])
+            multiplier = mdecode(value[2])
     elif len(value) == 4:
         band1 = int(value[0])
         if value[1] == ".":
@@ -76,6 +80,7 @@ def colordecode(value):
 
 def colorgen(value):
     band = colordecode(value)
+    print("Reading Value: " + "%4s" % str(value) + " | Band: " + str(band[0][0]) + str(band[0][1]) + "," + str(band[1][0]) + str(band[1][1]) + "," + str(band[2][0]) + str(band[2][1]) + "," + str(band[3][0])) + str(band[3][1])
     with open(SVGFILE, "r") as svg:
         lines = svg.readlines()
     svg.close()
