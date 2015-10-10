@@ -8,7 +8,7 @@ RESFILE="resvalues.txt"
 SVGDIR="svg"
 
 COLORS={
-		0:"BLACK",
+        0:"BLACK",
         1:"BROWN",
         2:"RED",
         3:"ORANGE",
@@ -22,7 +22,7 @@ COLORS={
 		}
 
 COLORCODES={
-		"BLACK":"000000",
+        "BLACK":"000000",
         "BROWN":"663332",
         "RED":"fe0000",
         "ORANGE":"ff6600",
