@@ -64,7 +64,7 @@ def colordecode(value):
         if value[1] == ".":
             offset = 1
             band2 = int(value[2])
-            multiplier = mdecode(value[3])
+            multiplier = mdecode(value[3]) - 1
         else:
             band2 = int(value[1])
             multiplier = mdecode(value[2]) + mdecode(value[3])
