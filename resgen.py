@@ -3,7 +3,7 @@
 import re
 import os
 
-SVGFILE="4-Band_Resistor.svg"
+SVGFILE=["4-Band_Resistor.svg","5-Band_Resistor.svg"]
 RESFILE="resvalues.txt"
 SVGDIR="svg"
 
@@ -81,7 +81,7 @@ def colordecode(value):
 def colorgen(value):
     band = colordecode(value)
     print("Reading Value: " + "%4s" % str(value) + " | Band: " + str(band[0][0]) + str(band[0][1]) + "," + str(band[1][0]) + str(band[1][1]) + "," + str(band[2][0]) + str(band[2][1]) + "," + str(band[3][0])) + str(band[3][1])
-    with open(SVGFILE, "r") as svg:
+    with open(SVGFILE[0], "r") as svg:
         lines = svg.readlines()
     svg.close()
 
